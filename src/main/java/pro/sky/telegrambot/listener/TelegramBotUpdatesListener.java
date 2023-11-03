@@ -87,9 +87,8 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
      */
     @Scheduled(cron = "0 0/1 * * * *")
     public void checkTask1(){
-        notificationTaskRepository.findAll().stream()
-                .filter(f-> f.getLocalDateTime().equals(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)))
-                .collect(Collectors.toList())
+        notificationTaskRepository
+                .getNotificationTaskByLocalDateTime(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
                 .forEach(f-> {
                     SendMessage message = new SendMessage(f.getChatId(), f.getMessage());
                     SendResponse response = telegramBot.execute(message);
