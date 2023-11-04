@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 public class NotificationTask {
     @Id
     @GeneratedValue
-    Long id;
-    Long chatId;
-    String message;
-    LocalDateTime localDateTime;
+    private Long id;
+    private Long chatId;
+    private String message;
+    private LocalDateTime localDateTime;
 
     public NotificationTask(Long id, Long chatId, String message, java.time.LocalDateTime localDateTime) {
         this.id = id;
