@@ -9,27 +9,27 @@ import java.time.LocalDateTime;
 public class NotificationTask {
     @Id
     @GeneratedValue
-    Long Id;
-    Long chatId;
-    String message;
-    LocalDateTime LocalDateTime;
+    private Long id;
+    private Long chatId;
+    private String message;
+    private LocalDateTime localDateTime;
 
     public NotificationTask(Long id, Long chatId, String message, java.time.LocalDateTime localDateTime) {
-        Id = id;
+        this.id = id;
         this.chatId = chatId;
         this.message = message;
-        LocalDateTime = localDateTime;
+        this.localDateTime = localDateTime;
     }
 
     public NotificationTask() {
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public Long getChatId() {
@@ -49,10 +49,10 @@ public class NotificationTask {
     }
 
     public java.time.LocalDateTime getLocalDateTime() {
-        return LocalDateTime;
+        return localDateTime;
     }
 
     public void setLocalDateTime(java.time.LocalDateTime localDateTime) {
-        LocalDateTime = localDateTime;
+        this.localDateTime = localDateTime;
     }
 }
